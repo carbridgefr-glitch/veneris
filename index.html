@@ -1,1 +1,712 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Veneris Motors | Premium Cars Patras</title>
+  <meta name="description" content="Veneris Motors στην Πάτρα. Επιλεγμένα premium οχήματα, διαφάνεια, ποιότητα και προσωπική εξυπηρέτηση." />
+  <meta name="theme-color" content="#080706" />
+
+  <meta property="og:title" content="Veneris Motors | Premium Cars Patras" />
+  <meta property="og:description" content="Επιλεγμένα premium οχήματα στην Πάτρα με ποιότητα, διαφάνεια και σιγουριά." />
+  <meta property="og:image" content="cover.jpg" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --black: #070604;
+      --black-soft: #11100e;
+      --gold: #d7b46a;
+      --gold-light: #f1d58d;
+      --gold-dark: #8f6a24;
+      --marble: #f7f2e9;
+      --marble-soft: #e9dfcf;
+      --text: #fff7e8;
+      --muted: #d9c9ad;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(215, 180, 106, 0.22), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(135deg, #050403 0%, #11100e 38%, #231907 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background:
+        linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.08) 18%, transparent 33%),
+        linear-gradient(35deg, rgba(255,255,255,0.05), transparent 45%),
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,0.08), transparent 25%),
+        radial-gradient(circle at 80% 75%, rgba(215,180,106,0.12), transparent 30%);
+      mix-blend-mode: screen;
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 16px 34px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 360px;
+      margin: 0 -16px;
+      overflow: hidden;
+      border-radius: 0 0 42px 42px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.78)),
+        linear-gradient(135deg, rgba(215,180,106,0.28), rgba(0,0,0,0.6)),
+        url("cover.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow);
+      border-bottom: 1px solid rgba(215, 180, 106, 0.38);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.08), transparent 38%),
+        radial-gradient(circle at 50% 0%, rgba(215,180,106,0.26), transparent 34%);
+      pointer-events: none;
+    }
+
+    .top-label {
+      position: absolute;
+      top: 20px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(215, 180, 106, 0.42);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-card {
+      position: relative;
+      margin-top: -92px;
+      padding: 24px 18px 22px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.03)),
+        linear-gradient(135deg, rgba(12,12,12,0.92), rgba(25,18,7,0.95));
+      border: 1px solid rgba(215, 180, 106, 0.46);
+      box-shadow: var(--shadow);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.08), transparent 35%),
+        radial-gradient(circle at top, rgba(215,180,106,0.24), transparent 40%);
+      pointer-events: none;
+    }
+
+    .profile-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-img-wrap {
+      width: 148px;
+      height: 148px;
+      margin: 0 auto 16px;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark), #fff2ba);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.42);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #0c0a07;
+      display: block;
+      background: #111;
+    }
+
+    h1 {
+      margin: 8px 0 6px;
+      font-size: clamp(31px, 8vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #fff8e8;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+    }
+
+    .gold-line {
+      width: 86px;
+      height: 2px;
+      margin: 14px auto 15px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .subtitle {
+      margin: 0 auto;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .mini-badge {
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #f9e7b8;
+      background: rgba(215, 180, 106, 0.10);
+      border: 1px solid rgba(215, 180, 106, 0.32);
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.025)),
+        linear-gradient(135deg, rgba(12,11,10,0.94), rgba(34,25,9,0.88));
+      border: 1px solid rgba(215, 180, 106, 0.32);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.32);
+      padding: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section.marble {
+      color: #1b1710;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.88), rgba(232,222,204,0.92)),
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,0.95), transparent 25%),
+        linear-gradient(115deg, transparent 0%, rgba(175,164,143,0.20) 25%, transparent 48%),
+        var(--marble);
+      border: 1px solid rgba(215, 180, 106, 0.5);
+    }
+
+    .section.marble::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.24;
+      background:
+        linear-gradient(125deg, transparent 0%, rgba(65,55,40,0.15) 22%, transparent 36%),
+        linear-gradient(35deg, transparent 0%, rgba(255,255,255,0.38) 44%, transparent 63%);
+      pointer-events: none;
+    }
+
+    .section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: var(--gold-light);
+      letter-spacing: -0.02em;
+    }
+
+    .section.marble .section-title {
+      color: #87621e;
+    }
+
+    .text {
+      margin: 0;
+      color: #e8dcc3;
+      line-height: 1.68;
+      font-size: 15.5px;
+    }
+
+    .section.marble .text {
+      color: #342d21;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 58px;
+      padding: 15px 16px;
+      border-radius: 19px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01)),
+        linear-gradient(135deg, #11100e, #1f1708);
+      border: 1px solid rgba(215, 180, 106, 0.36);
+      color: #fff6e2;
+      font-weight: 800;
+      font-size: 15.5px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.26);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      width: 100%;
+      font-family: inherit;
+      text-align: left;
+    }
+
+    .action:hover,
+    .action:focus {
+      transform: translateY(-2px);
+      border-color: rgba(241, 213, 141, 0.78);
+      outline: none;
+    }
+
+    .action.primary {
+      color: #1a1204;
+      background: linear-gradient(135deg, #fff0b8, #d7b46a 45%, #9c762a);
+      border-color: rgba(255, 242, 186, 0.82);
+      box-shadow: 0 18px 36px rgba(215, 180, 106, 0.24);
+    }
+
+    .action.marble-btn {
+      color: #1a1712;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.95), rgba(232,222,204,0.9)),
+        var(--marble);
+      border-color: rgba(215, 180, 106, 0.52);
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+      color: var(--gold-light);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .primary .arrow,
+    .marble-btn .arrow {
+      color: #4a3510;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .info-item {
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.24);
+      border: 1px solid rgba(215, 180, 106, 0.20);
+    }
+
+    .section.marble .info-item {
+      background: rgba(255,255,255,0.42);
+      border-color: rgba(130, 101, 45, 0.18);
+    }
+
+    .info-label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .section.marble .info-label {
+      color: #7b5b20;
+    }
+
+    .info-value {
+      color: #fff6e4;
+      font-size: 14.5px;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .section.marble .info-value {
+      color: #282015;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .feature {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(215,180,106,0.22);
+    }
+
+    .feature strong {
+      display: block;
+      color: #fff1bf;
+      margin-bottom: 5px;
+      font-size: 14.5px;
+    }
+
+    .feature span {
+      color: #d9c9ad;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .review-card {
+      text-align: center;
+      padding: 22px 18px;
+    }
+
+    .review-title {
+      margin: 0 0 8px;
+      color: #fff3cf;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .review-text {
+      margin: 0 auto 16px;
+      max-width: 480px;
+      color: #dfd0b4;
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    .small-cta {
+      margin-top: 20px;
+      text-align: center;
+      padding: 16px;
+      border-radius: 24px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(215,180,106,0.22);
+    }
+
+    .small-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      color: #f6df9b;
+      border: 1px solid rgba(215,180,106,0.42);
+      background: rgba(255,255,255,0.04);
+      font-weight: 800;
+      font-size: 13.5px;
+    }
+
+    footer {
+      margin: 20px auto 0;
+      padding: 14px 10px 4px;
+      text-align: center;
+      color: rgba(255, 246, 226, 0.68);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    footer a {
+      color: rgba(241, 213, 141, 0.86);
+      font-weight: 700;
+    }
+
+    @media (min-width: 620px) {
+      .page {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero {
+        margin-left: -22px;
+        margin-right: -22px;
+        min-height: 420px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .actions .wide {
+        grid-column: 1 / -1;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Veneris Motors cover image">
+      <div class="top-label">
+        <span class="pill">Premium Cars</span>
+        <span class="pill">Patras</span>
+      </div>
+    </section>
+
+    <section class="profile-card">
+      <div class="profile-inner">
+        <div class="profile-img-wrap">
+          <img class="profile-img" src="profil.jpg" alt="Veneris Motors" />
+        </div>
+
+        <h1>Veneris Motors</h1>
+        <div class="gold-line"></div>
+
+        <p class="subtitle">
+          Επιλεγμένα premium οχήματα στην Πάτρα, με έμφαση στην ποιότητα,
+          τη διαφάνεια και την προσωπική εξυπηρέτηση.
+        </p>
+
+        <div class="badge-row">
+          <span class="mini-badge">Since 1969</span>
+          <span class="mini-badge">Premium Selection</span>
+          <span class="mini-badge">Quality Driven</span>
+        </div>
+
+        <div class="actions">
+          <a class="action primary wide" href="https://search.google.com/local/writereview?placeid=ChIJDaoaWgY3XhMR8-DTHm8SHEE">
+            <span>Αφήστε Google Review</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action" href="tel:+302610707060">
+            <span>Καλέστε μας</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action" href="https://www.google.com/maps/search/?api=1&query=Veneris%20Motors%20Patra&query_place_id=ChIJDaoaWgY3XhMR8-DTHm8SHEE">
+            <span>Google Map</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action marble-btn" href="https://venerismotors.gr/">
+            <span>Visit Website</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action marble-btn" href="https://venerismotors.car.gr/">
+            <span>Δείτε τα αυτοκίνητα</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action" href="mailto:info@venerismotors.gr">
+            <span>Στείλτε Email</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <button class="action" type="button" onclick="saveContact()">
+            <span>Αποθήκευση επαφής</span>
+            <span class="arrow">›</span>
+          </button>
+
+          <a class="action" href="https://www.facebook.com/p/Veneris-Motors-61566547256848/">
+            <span>Visit Facebook</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="action" href="https://www.instagram.com/venerismotors/">
+            <span>Visit Instagram</span>
+            <span class="arrow">›</span>
+          </a>
+
+          <button class="action wide" type="button" onclick="shareProfile()">
+            <span>Κοινοποίηση προφίλ</span>
+            <span class="arrow">›</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section marble">
+      <h2 class="section-title">Η εταιρεία</h2>
+      <p class="text">
+        Η Veneris Motors στην Πάτρα αποτελεί έναν προορισμό για όσους αναζητούν
+        προσεγμένα, επιλεγμένα και premium μεταχειρισμένα αυτοκίνητα. Με πολυετή
+        παρουσία στον χώρο του αυτοκινήτου, η εταιρεία δίνει έμφαση στην ποιότητα,
+        στη διαφάνεια και στη σωστή καθοδήγηση του πελάτη πριν την αγορά.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Γιατί να μας επιλέξετε</h2>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Επιλεγμένα οχήματα</strong>
+          <span>Προσεκτική επιλογή αυτοκινήτων με βάση την ποιότητα και την εικόνα τους.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Διαφάνεια</strong>
+          <span>Στόχος είναι ο πελάτης να γνωρίζει τι αγοράζει και να αισθάνεται σιγουριά.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Premium εμπειρία</strong>
+          <span>Επαγγελματική εξυπηρέτηση από την πρώτη επικοινωνία μέχρι την παράδοση.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section marble">
+      <h2 class="section-title">Στοιχεία επικοινωνίας</h2>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="info-label">Διεύθυνση</span>
+          <span class="info-value">Γ. Παπανδρέου 91 &amp; Ελ. Βενιζέλου, Πάτρα 26332</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Τηλέφωνο</span>
+          <span class="info-value">+30 2610 707060</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Email</span>
+          <span class="info-value">info@venerismotors.gr</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section review-card">
+      <h2 class="review-title">Η γνώμη σας μετράει</h2>
+      <p class="review-text">
+        Αν μείνατε ευχαριστημένοι από την εμπειρία σας, μπορείτε να αφήσετε
+        την αξιολόγησή σας στη Google.
+      </p>
+
+      <a class="action primary wide" href="https://search.google.com/local/writereview?placeid=ChIJDaoaWgY3XhMR8-DTHm8SHEE">
+        <span>Leave a Google Review</span>
+        <span class="arrow">›</span>
+      </a>
+    </section>
+
+    <div class="small-cta">
+      <a href="https://carbridgefr-glitch.github.io/test-profil-page/create-card.html">
+        Θέλω κι εγώ τη δική μου Digital Card
+      </a>
+    </div>
+
+    <footer>
+      Powered by NFC Brelok • Jewel Art<br />
+      Instagram:
+      <a href="https://www.instagram.com/lazaros_jewelart">
+        @lazaros_jewelart
+      </a>
+    </footer>
+  </main>
+
+  <script>
+    function saveContact() {
+      const vcard = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "FN:Veneris Motors",
+        "ORG:Veneris Motors",
+        "TEL;TYPE=WORK,VOICE:+302610707060",
+        "EMAIL:info@venerismotors.gr",
+        "URL:https://venerismotors.gr/",
+        "ADR;TYPE=WORK:;;G. Papandreou 91 & El. Venizelou;Patra;;26332;Greece",
+        "END:VCARD"
+      ].join("\\n");
+
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = "veneris-motors.vcf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(url);
+    }
+
+    function shareProfile() {
+      const shareData = {
+        title: "Veneris Motors",
+        text: "Veneris Motors | Premium Cars Patras",
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href).then(function () {
+          alert("Το link αντιγράφηκε.");
+        });
+      } else {
+        alert(window.location.href);
+      }
+    }
+  </script>
+</body>
+</html>
